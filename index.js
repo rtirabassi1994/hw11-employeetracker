@@ -1,7 +1,9 @@
 const { prompt } = require("inquirer");
-const logo = require("asciiart-logo");
-const db = require("./db");
-require("console.table");
+const logo = require("./.gitignore/node_modules/asciiart-logo");
+const { connect } = require("./connection");
+const { updateEmployeeRole } = require("./index1");
+const db = require("./index1");
+require("./.gitignore/node_modules/console.table");
 
 init();
 
@@ -62,6 +64,13 @@ async function loadMainPrompts() {
       return addEmployee();
     case "REMOVE_EMPLOYEE":
       return removeEmployee();
+    case "UPDATE_EMPLOYEE_ROLE":
+      return updateEmployeeRole();
+    case "ADD_ROLE":
+      return addRole();
+      // make func!!!
+    // case "END":
+    //   return connection.end();
     //You will need to complete the rest of the cases 
     default:
       return quit();
