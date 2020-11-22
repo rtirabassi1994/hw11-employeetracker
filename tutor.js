@@ -144,6 +144,7 @@ function addRole() {
             name: "DepartmentID",
             type: "input",
             message: "What is the department ID?"
+            // select option
         }
     ]).then(function(answer){
         console.log (answer.Role)
