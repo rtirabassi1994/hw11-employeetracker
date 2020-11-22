@@ -182,20 +182,21 @@ function addEmployee() {
         {
             name: "ManagerID",
             type: "input",
-            message: "What is the ID?"
+            message: "What is manager the ID?"
         }
 
     ]).then(function(answer){
-        console.log (answer.Role)
-        const newRole = answer.Role;
-        const salary = answer.Salary;
-        const DepartmentID = answer.DepartmentID;
-        const query = "INSERT INTO employee(first_name, last_name, department_id) VALUES (?, ?, ?)";
-        connection.query(query, [newRole, salary, DepartmentID], function(err){
+        console.log (answer.firstName.lastName)
+        const firstName = answer.FirstName;
+        const lastName = answer.LastName;
+        const idRole = answer.RoleID;
+        const idManager = answer.ManagerID;
+        const query = "INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)";
+        connection.query(query, [firstName, lastName, idRole, idManager], function(err){
             if(err) throw err;
             console.log("\n ----------------------------------------\n");
-            console.log("Role was succesfully added.")
-            viewRole();
+            console.log("Employee was succesfully added.")
+            viewlastName();
         })
     })
     
